@@ -1,0 +1,20 @@
+exit
+(use 'templating.core)
+(-main ("lsjlajls"))
+exit
+(use 'templating.core)
+(use 'templating.conversion)
+(templating.conversion)
+(convert "aljls")
+exit
+(use templating.conversion)
+(use 'templating.conversion)
+(use 'templating.core)
+(conversion/file_exists "/home/soma/test")
+(templating.conversion/file_exists "/home/soma/test")
+(use 'templating.core)
+(use 'templating.conversion)
+ext
+exit
+(use 'templating.conversion)
+exit
