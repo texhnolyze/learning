@@ -1,0 +1,30 @@
+#!/bin/ruby
+#
+require 'pp'
+
+class PuzzleSolver 
+    def initialize(input)
+        @size = input.shift.to_i
+        @cards = input
+    end
+
+    def setup_arrays
+        i = 0
+        result = [];
+        while i < @size do
+            result <<  @cards.shift(@size)
+            i += 1
+        end
+        pp result
+        @cards = result
+    end
+
+    def sort
+        @cards.each do |array|
+            array.each do |cards|
+            end
+        end
+    end
+end
+
+PuzzleSolver.new(ARGV).setup_arrays
