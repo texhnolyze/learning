@@ -1,4 +1,4 @@
 learning
 ========
 
-coding practices and small practices in different languages for learning purposes
+coding practices and small projects in different languages for learning purposes
