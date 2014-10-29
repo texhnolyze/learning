@@ -1,25 +1,27 @@
 (ns templating.fileops
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :refer [join]]))
 
-(defn split_path_filename
-  [file_path]
-  ;(string/split file_path #"$/"))
-  (["/home/soma" "test"]))
-
-(defn path 
-  [file_path]
-  (first (split_path_filename file_path)))
+(defn split-path
+  [file-path]
+  (.split file-path "/"))
 
 (defn filename
-  [file_path]
-  (last (split_path_filename file_path)))
+  [file-path]
+  (last 
+    (split-path file-path)))
 
-(defn file_exists?
-  [file]
+(defn path 
+  [file-path]
+  (join "/" 
+    (drop-last 
+      (split-path file-path))))
+
+(defn file-exists?
+  [file-path]
   (def directory 
-    (clojure.java.io/file (path file)))
+    (clojure.java.io/file (path file-path)))
 
-  (fn files []
-    (for [file (file-seq (directory))](.getName file)))
-
-  (contains? 'files (filename file)))
+  (contains? 
+    (set (for [file (.listFiles directory)] 
+      (.getName file)))
+    (filename file-path)))

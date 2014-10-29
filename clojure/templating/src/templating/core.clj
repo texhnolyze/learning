@@ -1,8 +1,8 @@
 (ns templating.core
   (:gen-class)
-  (:require [templating.conversion :as conversion]))
+  (:require [templating.conversion :refer [convert]]))
 
 (defn -main
   "run application"
-  [file & args]
-  (conversion/convert file))
+  [file]
+  (convert file))

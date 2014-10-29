@@ -1,8 +1,7 @@
 (ns templating.conversion
-  (:require [templating.fileops :as fileops]))
+  (:require [templating.fileops :refer [file-exists?]]))
 
 (defn convert
   [file]
-  (if (fileops/file_exists? file)
-    (do (println "converting " file))
-    (println "does not exist: " (str file))))
+  (if (file-exists? file)
+    (do (println "converting " file))))
