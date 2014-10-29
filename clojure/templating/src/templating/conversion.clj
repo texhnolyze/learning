@@ -4,4 +4,5 @@
 (defn convert
   [file]
   (if (file-exists? file)
-    (do (println "converting " file))))
+    (println "converting " file)
+    (println "file does not exist " file)))

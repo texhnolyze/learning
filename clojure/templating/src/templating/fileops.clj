@@ -1,7 +1,7 @@
 (ns templating.fileops
   (:require [clojure.string :refer [join]]))
 
-(defn split-path
+(defn- split-path
   [file-path]
   (.split file-path "/"))
 
