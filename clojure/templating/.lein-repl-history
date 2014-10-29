@@ -18,3 +18,18 @@ ext
 exit
 (use 'templating.conversion)
 exit
+(contains? (for [file (file-seq (clojure.java.io/file ("/home/soma")))] (.getName file)) "test)
+(contains? (for [file (file-seq (clojure.java.io/file ("/home/soma")))] (.getName file)) "test")
+(for [file (file-seq (clojure.java.io/file ("/home/soma")))] (.getName file)
+)
+(for [file (file-seq (clojure.java.io/file ("/home/soma")))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home/soma"))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home/"))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home"))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts"))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts/"))] (.getName file))
+(for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts"))] (.getName file))
+(contains? (for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts"))] (.getName file)) "test")
+(contains? '(for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts"))] (.getName file)) "test")
+(contains? (set (for [file (file-seq (clojure.java.io/file "/home/soma/dotfiles/scripts"))] (.getName file))) "test")
+exit
