@@ -8,7 +8,7 @@
 (deftest convert-test
   (testing "convert template file if it exists"
     (testing "if file-exists? returns true converts file"
-      (is '(convert valid-file)(str "converting " valid-file)))
+      (is (str "converting " valid-file) '(convert valid-file)))
 
     (testing "if file-exists? returns false return error"
-      (is '(convert invalid-file)(str "file does not exist " invalid-file)))))
+      (is (str "file does not exist " invalid-file) '(convert invalid-file)))))
